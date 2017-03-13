@@ -11,9 +11,8 @@ class List
  };
 
  public:
- Element * root;
  Element * top;
- List(){this->root = NULL; this->top = root;}
+ List(){this->top = NULL;}
 
  void push(int num)
  {
