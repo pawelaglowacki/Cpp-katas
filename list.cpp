@@ -6,7 +6,7 @@ class List
  class Element
  {
   public:
-   int el;
+   int num;
    Element * prev;
  };
 
@@ -17,28 +17,32 @@ class List
 
  void push(int num)
  {
-    Element * el = new Element();
-    el->el = num;
-    top = el;
-
-   if(top == root)
-   { 
-    el->prev = root;
-   }
-   else
-   {
-    el->prev = top;
-   }
+  Element * newEl = new Element();
+  newEl->prev = top;
+  newEl->num = num;
+  top = newEl;
  } 
+
+void pop()
+{
+  Element * tmp = top;
+  top = top->prev;
+  delete tmp;
+}
 
 };
 
 int main()
 {
  List l = List();
- l.push(5);
- l.push(4);
- l.push(6);
- std::cout<<l.top->el;
-
+ l.push(1);
+ std::cout<<l.top->num;
+ l.push(2);
+ std::cout<<l.top->num;
+ l.push(3);
+ std::cout<<l.top->num;
+ l.pop();
+ std::cout<<l.top->num;
+ l.pop();
+ std::cout<<l.top->num;
 }
