@@ -6,13 +6,14 @@ class List
  class Element
  {
   public:
+   Element(){}
    int num;
    Element * prev;
  };
 
  public:
  Element * top;
- List(){this->top = NULL;}
+ List(){}
 
  void push(int num)
  {
@@ -29,9 +30,10 @@ void pop()
   delete tmp;
 }
 
+int getTopNr() {return top->num;}
 };
 
-int main()
+/*int main()
 {
  List l = List();
  l.push(1);
@@ -44,4 +46,4 @@ int main()
  std::cout<<l.top->num;
  l.pop();
  std::cout<<l.top->num;
-}
+}*/
