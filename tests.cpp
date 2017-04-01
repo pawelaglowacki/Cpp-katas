@@ -1,26 +1,27 @@
 #include <gtest/gtest.h>
 #include "stack.cpp"
+#include "list.cpp"
 
-TEST(ListTest, ElementInList)
+TEST(StackTest, ElementInStack)
 {
-List l = List();
+Stack l = Stack();
 l.push(1);
 int top_element = l.getTopNr();
 ASSERT_EQ(top_element, 1);
 }
 
-TEST(ListTest, TwoElementsInList)
+TEST(StackTest, TwoElementsInStack)
 {
-List l = List();
+Stack l = Stack();
 l.push(1);
 l.push(5);
 int top_element = l.getTopNr();
 ASSERT_EQ(top_element, 5);
 }
 
-TEST(ListTest, PushPushPop)
+TEST(StackTest, PushPushPop)
 {
-List l = List();
+Stack l = Stack();
 l.push(1);
 l.push(5);
 l.pop();
@@ -28,9 +29,9 @@ int top_element = l.getTopNr();
 ASSERT_EQ(top_element, 1);
 }
 
-TEST(ListTest, PushPushPopPushPop)
+TEST(StackTest, PushPushPopPushPop)
 {
-List l = List();
+Stack l = Stack();
 l.push(1);
 l.push(5);
 l.pop();

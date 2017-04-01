@@ -1,7 +1,7 @@
 #include <iostream>
 // my own list implementation
 
-class List
+class Stack
 {
  class Element
  {
@@ -13,7 +13,7 @@ class List
 
  public:
  std::unique_ptr<Element> top;
- List(){}
+ Stack(){}
 
  void push(int num)
  {
@@ -31,17 +31,3 @@ class List
 int getTopNr() {return top->num;}
 };
 
-/*int main()
-{
- List l = List();
- l.push(1);
- std::cout<<l.top->num;
- l.push(2);
- std::cout<<l.top->num;
- l.push(3);
- std::cout<<l.top->num;
- l.pop();
- std::cout<<l.top->num;
- l.pop();
- std::cout<<l.top->num;
-}*/
