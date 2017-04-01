@@ -8,27 +8,25 @@ class List
   public:
    Element(){}
    int num;
-   Element * prev;
+   std::unique_ptr<Element> prev;
  };
 
  public:
- Element * top;
+ std::unique_ptr<Element> top;
  List(){}
 
  void push(int num)
  {
-  Element * newEl = new Element();
-  newEl->prev = top;
+  std::unique_ptr<Element> newEl (new Element());
+  newEl->prev = std::move(top);
   newEl->num = num;
-  top = newEl;
+  top = std::move(newEl);
  } 
 
-void pop()
-{
-  Element * tmp = top;
-  top = top->prev;
-  delete tmp;
-}
+ void pop()
+ {
+  top = std::move(top->prev); 
+ }
 
 int getTopNr() {return top->num;}
 };
