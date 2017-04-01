@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "list.cpp"
+#include "stack.cpp"
 
 TEST(ListTest, ElementInList)
 {
