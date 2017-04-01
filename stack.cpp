@@ -1,5 +1,4 @@
 #include <iostream>
-// my own list implementation
 
 class Stack
 {
